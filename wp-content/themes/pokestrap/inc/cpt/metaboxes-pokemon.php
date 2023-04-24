@@ -1,4 +1,9 @@
 <?php
+/**
+ * Responsible for registering the metaboxes for the pokemon custom post type.
+ *
+ * @package pokestrap
+ */
 
 namespace pokestrap\theme;
 
@@ -34,8 +39,11 @@ function metabox_pokemon_information() {
 	$pokemon_index_new = get_post_meta( $post->ID, 'pokemon_index_new', true );
 
 	echo '
-    <input type="number" min="0" name="pokemon_weight" value="' . esc_attr( $pokemon_weight ) . '">
-    <input type="number" min="0" name="pokemon_index_old" value="' . esc_attr( $pokemon_index_old ) . '">
+	<label for="pokemon_weight">Weight</label>
+    <input type="number" min="0" name="pokemon_weight" value="' . esc_attr( $pokemon_weight ) . '"><br>
+    <label for="pokemon_index_old">Old Pokedex Index</label>
+    <input type="number" min="0" name="pokemon_index_old" value="' . esc_attr( $pokemon_index_old ) . '"><br>
+    <label for="pokemon_index_new">New Pokedex Index</label>
     <input type="number" min="0" name="pokemon_index_new" value="' . esc_attr( $pokemon_index_new ) . '">
     ';
 }

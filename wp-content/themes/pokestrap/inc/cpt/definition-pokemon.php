@@ -1,4 +1,9 @@
 <?php
+/**
+ * Responsible for registering the Pokemon custom post type.
+ *
+ * @package pokestrap
+ */
 
 namespace pokestrap\theme;
 

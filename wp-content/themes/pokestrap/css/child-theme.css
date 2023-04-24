@@ -15392,4 +15392,70 @@ body.understrap-no-sidebar .wp-block-cover.alignwide {
   border: 1px solid #e9ecef;
 }
 
+/* Style for the Pokemon Single Template */
+.pokemon-single-post .image-and-description {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+.pokemon-single-post .image-and-description img {
+  width: 120px;
+  height: auto;
+}
+.pokemon-single-post h1, .pokemon-single-post .h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.pokemon-single-post .pokemon-types {
+  margin-bottom: 20px;
+}
+.pokemon-single-post .pokemon-types a {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 10px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.pokemon-single-post .pokemon-types a:nth-child(1) {
+  background-color: #7038f8;
+}
+.pokemon-single-post .pokemon-types a:nth-child(2) {
+  background-color: #a8a878;
+}
+.pokemon-single-post .pokemon-attacks {
+  border-collapse: collapse;
+  width: 100%;
+}
+.pokemon-single-post .pokemon-attacks th,
+.pokemon-single-post .pokemon-attacks td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+.pokemon-single-post .pokemon-attacks th {
+  background-color: #f2f2f2;
+}
+.pokemon-single-post .pokemon-attacks td a {
+  font-weight: bold;
+  color: #7038f8;
+  text-decoration: none;
+}
+.pokemon-single-post #get-old-index {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #7038f8;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.pokemon-single-post #get-old-index:hover {
+  background-color: #a040a0;
+}
+
 /*# sourceMappingURL=child-theme.css.map */

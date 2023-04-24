@@ -9,7 +9,6 @@
 defined( 'ABSPATH' ) || exit;
 
 
-
 /**
  * Removes the parent themes stylesheet and scripts from inc/enqueue.php
  */
@@ -20,8 +19,8 @@ function understrap_remove_scripts() {
 	wp_dequeue_script( 'understrap-scripts' );
 	wp_deregister_script( 'understrap-scripts' );
 }
-add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 
+add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 
 
 /**
@@ -44,8 +43,8 @@ function theme_enqueue_styles() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
 
 /**
@@ -54,8 +53,8 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function add_child_theme_textdomain() {
 	load_child_theme_textdomain( 'understrap-child', get_stylesheet_directory() . '/languages' );
 }
-add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 
+add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 
 
 /**
@@ -69,8 +68,8 @@ add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 function understrap_default_bootstrap_version() {
 	return 'bootstrap5';
 }
-add_filter( 'theme_mod_understrap_bootstrap_version', 'understrap_default_bootstrap_version', 20 );
 
+add_filter( 'theme_mod_understrap_bootstrap_version', 'understrap_default_bootstrap_version', 20 );
 
 
 /**
@@ -85,9 +84,22 @@ function understrap_child_customize_controls_js() {
 		true
 	);
 }
+
 add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_controls_js' );
 
 
-/**
- * 
- */
+// Include the Pokemon custom post type definition.
+require_once get_stylesheet_directory() . '/inc/cpt/definition-pokemon.php';
+
+// Include the Pokemon metaboxes.
+require_once get_stylesheet_directory() . '/inc/cpt/metaboxes-pokemon.php';
+
+// Include the Custom Routes Handler.
+require_once get_stylesheet_directory() . '/inc/custom-routes/custom-routes-handler.php';
+
+// Include the AJAX Handler.
+require_once get_stylesheet_directory() . '/inc/ajax/action-get-old-pokemon-index.php';
+
+// Add REST endpoints.
+require_once get_stylesheet_directory() . '/inc/rest/pokemon-index.php';
+require_once get_stylesheet_directory() . '/inc/rest/pokemon-data.php';
